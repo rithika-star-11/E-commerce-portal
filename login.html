@@ -1,0 +1,30 @@
+<h2>Login</h2>
+
+<form id="loginForm">
+  <label>Email:</label>
+  <input type="email" id="logEmail"><br><br>
+
+  <label>Password:</label>
+  <input type="password" id="logPassword"><br><br>
+
+  <button type="submit">Login</button>
+</form>
+
+<p id="loginMsg"></p>
+
+<script>
+document.getElementById("loginForm").onsubmit = function(e){
+    e.preventDefault();
+
+    let email = document.getElementById("logEmail").value.trim();
+    let pass = document.getElementById("logPassword").value.trim();
+
+    if(email === "" || pass === ""){
+        alert("All fields are required!");
+        return;
+    }
+
+    document.getElementById("loginMsg").innerHTML = 
+       "Login Successful!";
+}
+</script>
